@@ -2,7 +2,7 @@
 
 from rest_framework import viewsets
 from rest_framework.response import Response
-from .models import Product, ProductVariant
+from .models import Product, Product_Variant
 from .serializers import ProductSerializer, ProductVariantSerializer
 
 class ProductViewSet(viewsets.ViewSet):
@@ -20,5 +20,5 @@ class ProductViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
 class ProductVariantViewSet(viewsets.ModelViewSet):
-    queryset = ProductVariant.objects.all()
+    queryset = Product_Variant.objects.all()
     serializer_class = ProductVariantSerializer
