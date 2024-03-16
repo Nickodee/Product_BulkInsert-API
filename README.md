@@ -22,7 +22,7 @@ python manage.py runserver
 {
     "products": [
         {
-            "name": "Djahgh",
+            "name": "Yoghurt",
             "image": "yogurt.jpg",
             "variants": [
                 {
