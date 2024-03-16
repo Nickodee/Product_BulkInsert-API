@@ -1,13 +1,11 @@
-from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProductViewSet, ProductVariantViewSet
+from .views import ProductViewSet
 
-# Create a router and register our viewsets with it.
 router = DefaultRouter()
-router.register(r'products', ProductViewSet, basename='product')
-router.register(r'variants', ProductVariantViewSet, basename='productvariant')
+router.register(r'products', ProductViewSet)
 
 urlpatterns = [
-       path('', include(router.urls)),
+    path('', include(router.urls)),
+    path('products/<int:pk>/', include(router.urls)),
 ]
